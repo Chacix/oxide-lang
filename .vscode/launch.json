@@ -1,0 +1,125 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'oxide'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "oxide",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'oxide'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=oxide",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "oxide",
+                    "kind": "bin"
+                }
+            },
+            "reverseDebugging": true,
+            "initCommands": ["help"],
+            "stopOnEntry": false,
+            "stdio": [],
+            "args": "-t tests/scripts/while.ox",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'oxide'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=oxide",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "oxide",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'common'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=common",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "common",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'examples'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=examples",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "examples",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'syntax'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=syntax",
+                    "--package=oxide"
+                ],
+                "filter": {
+                    "name": "syntax",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
